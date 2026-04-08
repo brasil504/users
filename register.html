@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        form { margin-bottom: 20px; }
+        .success { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>User Registration</h2>
+    <form id="registerForm">
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname" required><br><br>
 
+        <label for="sname">Second Name:</label><br>
+        <input type="text" id="sname" name="sname" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // stop page reload
+
+            const fname = document.getElementById("fname").value;
+            const sname = document.getElementById("sname").value;
+
+            document.getElementById("message").innerHTML =
+                "<p class='success'>Form submitted successfully!</p>" +
+                "<p>Thank you, " + fname + " " + sname + ". Your registration has been received.</p>";
+        });
+    </script>
+</body>
+</html>
